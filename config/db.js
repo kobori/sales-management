@@ -3,10 +3,9 @@ const knex = require('knex');
 const db = knex({
   client: 'mysql',
   connection: {
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'tanenyna12',
-    database: 'cadastros'
+    host: 'us-cdbr-iron-east-02.cleardb.net',
+    user: 'b170499f3a67ae',
+    password: 'cc0535d3'
   }
 });
 
