@@ -1,0 +1,159 @@
+{% extends "../layout.njk" %}
+
+{% block pagina %}
+
+<div class="container-fluid" style="padding: 0px;">
+
+  <div class="row px-5 py-5 shadow-sm p-3 mb-4 bg-white rounded">
+    <div class="col-md-12 text-center">
+      <p class="text-dark">CLIENTE</p>
+      <p><i class="far fa-user text-primary"></i> {{cliente.nome}} {{cliente.sobreNome}}</p>
+      <p><i class="fas fa-mobile-alt"></i> Tel. {{cliente.telefone}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- Informação do cliente -->
+    <div class="col-md-6">
+      <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="height: 100%;">
+        <h3 class="border-bottom-primary mb-4 pb-1">Informação do cliente</h3>
+        <table class="table table-sm table-hover">
+          <tbody>
+            <tr>
+              <td style="border-top: none;">
+                <small>Nome</small>
+                <p> {{cliente.nome}} {{cliente.sobreNome}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Data de Nascimento</small>
+                <p> {{cliente.idade}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>E-mail</small>
+                <p> {{cliente.email}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Telefone</small>
+                <p>{{cliente.telefone}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Endereço</small>
+                <p>{{cliente.estado}} {{cliente.cidade}} {{cliente.endereco}} {{cliente.apartamento}} 〒{{cliente.cep}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <small>Possui carteira de motorista?</small>
+                <p>{{cliente.cartSim}} {{cliente.cartNao}} </p>
+              </td>
+            </tr>
+          </tbody>  
+        </table>
+      </div>
+    </div>
+
+    <!-- Informação da compra -->
+    <div class="col-md-6">
+      <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="height: 100%;">
+        <h3 class="border-bottom-primary mb-4 pb-1">Informação da Compra</h3>
+        <table class="table table-sm table-hover">
+          <tbody>
+            <tr>
+              <td style="border-top: none;">
+                <small>Marca</small>
+                <p>{{cliente.marca}}</p>
+              </td>
+            </tr>  
+            <tr>
+              <td>
+                <small>Modelo</small>
+                <p>{{cliente.modelo}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Ano</small>
+                <p>{{cliente.ano}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Km</small>
+                <p>{{cliente.km}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Placa</small>
+                <p>{{cliente.placa}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <small>Chassi</small>
+                <p>{{cliente.chassi}}</p>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <small>Combustível</small>
+                <p>{{cliente.combustivel}}</p>
+              </td>
+            </tr>    
+          </tbody>
+        </table>         
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Informação de pagamento -->
+  <div class="row my-3">
+    <div class="col-md-12">
+      <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="height: 100%;">
+        <h3 class="border-bottom-primary mb-4 pb-1">Informação de pagamento</h3>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordred table-sm table-hover" id="dataTable" width="100%" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td style="border-top: none;">
+                    <small>Valor</small>
+                    <p> {{cliente.valor}}</p>
+                  </td>
+                </tr> 
+                <tr>
+                  <td>
+                    <small>Metodo de pagamento</small><br>
+                    <p class="d-inline-flex">{{cliente.metodoP}}</p>
+                    <p class="d-inline-flex">{{cliente.parcela}} {{cliente.numVezes}}</p>
+                  </td>
+                </tr> 
+                <tr>
+                  <td>
+                    <small>Entrada</small>
+                    <p>{{cliente.entradaNao}} {{cliente.valorEntrada}}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>  
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

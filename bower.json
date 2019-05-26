@@ -1,0 +1,24 @@
+{
+  "name": "dashboard",
+  "description": "",
+  "main": "",
+  "authors": [
+    "kobori <ubiratan.jp@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://localhost:3000/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3",
+    "bootstrap": "4.0",
+    "angular-route": "1.3",
+    "angular-resource": "1.3",
+    "chart.js": "2.8.0"
+  }
+}

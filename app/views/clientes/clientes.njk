@@ -1,0 +1,58 @@
+{% extends "../layout.njk" %}
+
+{% block pagina %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 d-flex">
+      <h2 class="mr-auto text-gray-800">Clientes Cadastrados</h2>
+      <a href="/cadastro" class="btn btn-primary float-right mb-4 mr-5 p-2" >
+        <span data-feather="user-plus"></span>
+        Cadastrar
+      </a>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Informações</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <td>cliente</td>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <td>cliente</td>
+                </tr>
+              </tfoot>
+              {% for cliente in clientes %}
+                <tbody>
+                  <tr>  
+                    <td>
+                      <a href="/cliente/{{cliente.id}}" class="nav nav-link">
+                        <i class="far fa-user"></i> {{cliente.nome}} <br>
+                        <small class="mr-2 text-secondary"><i class="far fa-envelope"></i> {{cliente.email}} </small> 
+                        <small class="text-secondary"><i class="fas fa-mobile-alt"></i> {{cliente.telefone}}</small>
+                      </a>  
+                    </td>
+                  </tr>
+                </tbody>
+              {% endfor %}
+            </table>    
+          </div>  
+        </div>    
+      </div>  
+            
+    </div>
+  </div>
+</div>
+
+{% endblock %}

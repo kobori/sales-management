@@ -1,0 +1,81 @@
+{% extends "../layout.njk" %}
+
+{% block pagina %}
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 d-flex">
+      <h2 class="mr-auto text-gray-800">Veículo Cadastrados</h2>
+      <a href="/add" class="btn btn-primary float-right mb-4 mr-5 p-2">
+        <span data-feather="user-plus"></span>
+        Cadastrar
+      </a>
+    </div>
+  </div>
+
+<!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Informações</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Km</th>
+              <th>Placa</th>
+              <th>Chassi</th>
+              <th>Combustível</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Km</th>
+              <th>Placa</th>
+              <th>Chassi</th>
+              <th>Combustível</th>
+              <th>Preço</th>
+            </tr>
+          </tfoot>
+          {% for veiculo in veiculos %}
+            <tbody>
+              <tr>
+                <td>
+                  <i class="fas fa-pen-square mr-3" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"></i>
+                  {{veiculo.marca}}
+                </td>
+                <td>{{veiculo.modelo}}</td>
+                <td>{{veiculo.ano}}</td>
+                <td>{{veiculo.km}}</td>
+                <td>{{veiculo.placa}}</td>
+                <td>{{veiculo.chassi}}</td>
+                <td>{{veiculo.combustivel}}</td>
+                <td>{{veiculo.preco}}</td>
+              </tr>
+            </tbody>
+          {% endfor %}  
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content py-5 px-5">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
